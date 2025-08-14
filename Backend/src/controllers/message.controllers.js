@@ -1,5 +1,5 @@
-import Conversation from "../models/conversations.models";
-import Message from "../models/messages.models";
+import Conversation from "../models/conversations.models.js";
+import Message from "../models/messages.models.js";
 import { hitesh,piyush } from "../utils/ai.js";
 
 export const getAllMessages = async (req,res) => {
@@ -55,12 +55,12 @@ export const createMessage = async (req,res) => {
             }
             await conversation.save();
         }
-        const history = {
+        const developer = {
             role: 'developer',
             content: `User which is asking the question is ${req.user.name} and his email is ${req.user.email}`
         }
 
-         const filteredMessages = messages.map((message) => {
+         const history = messages.map((message) => {
             return {
                 role:message.role,
                 content:message.content
@@ -73,11 +73,12 @@ export const createMessage = async (req,res) => {
         };
 
         let rawContent;
+        
 
         if(conversation.persona==='hitesh'){
-            rawContent= hitesh(history,filteredMessages,newMessage)
+            rawContent= await hitesh(developer,history,newMessage)
         }else{
-            rawContent = piyush(history,filteredMessages,newMessage)
+            rawContent = await piyush(developer,history,newMessage)
         }
         if(!rawContent){
             return res.status(400).json({message: "Error in generating response"});

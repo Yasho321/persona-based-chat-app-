@@ -6,8 +6,8 @@ import { createMessage, getAllMessages } from '../controllers/message.controller
 
 const router = Router();
 
-router.get("/:id", isLoggedIn , getAllMessages)
-router.post("/:id",isLoggedIn, createMessage )
+router.get("/:conversationId", isLoggedIn , getAllMessages)
+router.post("/:conversationId",isLoggedIn, createMessage )
 
 
 

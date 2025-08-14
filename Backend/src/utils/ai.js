@@ -97,8 +97,9 @@ export const hitesh = async (developer,history,newMessage) =>  {
       
     ];
     message.push(developer);
+    
     if(history.length !== 0){
-        history.foreach((el)=>message.push(el));
+        history.forEach((el)=>message.push(el));
     }
     
     message.push(newMessage);
@@ -212,7 +213,7 @@ export const piyush = async (developer,history,newMessage) =>  {
     ]
     message.push(developer);
     if(history.length !== 0){
-        history.foreach((el)=>message.push(el));
+        history.forEach((el)=>message.push(el));
     }
     message.push(newMessage)
 

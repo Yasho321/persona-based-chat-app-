@@ -13,7 +13,7 @@ const conversationSchema = new Schema({
     },
     title : {
         type : String ,
-        required : true
+        
     },
 
 

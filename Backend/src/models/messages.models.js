@@ -6,7 +6,7 @@ const messageSchema = new Schema({
         ref: 'Conversation',
         required : true
     }, 
-    SenderRole : {
+    role : {
         type: String,
         enum : ['user', 'assistant'],
         required : true

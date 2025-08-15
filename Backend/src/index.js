@@ -18,7 +18,7 @@ const port= process.env.PORT || 8080;
 
 
 app.use(cors({
-    origin: ['http://localhost:5173','https://persona-based-chat-app.vercel.app' ],
+    origin: 'https://persona-based-chat-app.vercel.app' ,
     credentials: true,               
     
 }));

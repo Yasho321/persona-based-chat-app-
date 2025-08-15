@@ -10,11 +10,12 @@ export const isLoggedIn = async (req, res, next) =>{
          if (!token && req.headers.authorization?.startsWith("Bearer ")) {
             token = req.headers.authorization.split(" ")[1];
         }
-        
+
 
         if(!token){
             return res.status(400).json({
                 success : false , 
+                
                 message : "No Token Found"
             })
         }

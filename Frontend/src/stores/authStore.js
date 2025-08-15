@@ -29,6 +29,9 @@ export const useAuthStore = create((set) => ({
     try {
       const res = await axiosInstance.post("/auth/register", data)
       set({ authUser: res.data.user })
+      if (res.data.token) {
+        localStorage.setItem("authToken", res.data.token);
+      }
       set({ isLoggedOut: false })
       toast.success("Account created successfully!")
     } catch (error) {
@@ -44,6 +47,9 @@ export const useAuthStore = create((set) => ({
     try {
       const res = await axiosInstance.post("/auth/login", data)
       set({ authUser: res.data.user })
+       if (res.data.token) {
+        localStorage.setItem("authToken", res.data.token);
+      }
       set({ isLoggedOut: false })
       toast.success(res.data.message)
     } catch (error) {

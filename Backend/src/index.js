@@ -20,8 +20,7 @@ const port= process.env.PORT || 8080;
 app.use(cors({
     origin: ['http://localhost:5173','https://persona-based-chat-app.vercel.app' ],
     credentials: true,               
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
-    allowedHeaders: ['Content-Type', 'Authorization'],   
+    sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
 }));
 
 app.use(cookieParser())

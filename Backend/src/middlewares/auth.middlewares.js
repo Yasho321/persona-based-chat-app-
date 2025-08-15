@@ -7,9 +7,12 @@ export const isLoggedIn = async (req, res, next) =>{
         
 
         const token = req.cookies?.token;
+         if (!token && req.headers.authorization?.startsWith("Bearer ")) {
+            token = req.headers.authorization.split(" ")[1];
+        }
 
         if(!token){
-            res.status(400).json({
+            return res.status(400).json({
                 success : false , 
                 message : "No Token Found"
             })

@@ -4,11 +4,13 @@ import dotenv from "dotenv";
 dotenv.config();
 export const isLoggedIn = async (req, res, next) =>{
     try {
-        
+        let token ;
 
-        const token = req.cookies?.token;
-         if (!token && req.headers.Authorization?.startsWith("Bearer ")) {
-            token = req.headers.Authorization.split(" ")[1];
+        if (req.headers.authorization && req.headers.authorization.startsWith("Bearer ")) {
+            token = req.headers.authorization.split(" ")[1]
+        } else if (req.cookies?.token) {
+        // Fallback to cookie for same-origin requests
+            token = req.cookies.token
         }
 
 

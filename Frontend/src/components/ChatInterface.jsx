@@ -94,7 +94,7 @@ export default function ChatInterface({ conversation, onBack }) {
                         message.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted"
                       }`}
                     >
-                      <CardContent className="p-3">
+                      <CardContent className="px-5 ">
                         <p className="text-sm whitespace-pre-wrap">{message.content}</p>
                         <p
                           className={`text-xs mt-1 ${

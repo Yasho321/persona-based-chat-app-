@@ -61,10 +61,10 @@ export default function PersonaSelection() {
           <Card className="cursor-pointer hover:shadow-lg transition-shadow">
             <CardHeader className="text-center">
               <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-blue-600">P</span>
+               <img src = "https://github.com/piyushgarg-dev.png" alt = "Piyush Garg" className="rounded-full" />
               </div>
               <CardTitle className="text-xl">Piyush</CardTitle>
-              <CardDescription>Tech enthusiast and coding mentor</CardDescription>
+              <CardDescription>Founder of teachyst</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">
@@ -81,10 +81,12 @@ export default function PersonaSelection() {
           <Card className="cursor-pointer hover:shadow-lg transition-shadow">
             <CardHeader className="text-center">
               <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-green-600">H</span>
+               
+                  <img src= "https://github.com/hiteshchoudhary.png" alt = "Hitesh Choudhary" className="rounded-full" />
+                
               </div>
               <CardTitle className="text-xl">Hitesh</CardTitle>
-              <CardDescription>Full-stack developer and educator</CardDescription>
+              <CardDescription>Founder of Learnyst and Chai aur code </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">

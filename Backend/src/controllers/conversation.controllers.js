@@ -2,7 +2,7 @@ import Conversation from "../models/conversations.models.js";
 
 export const getAllConversations = async (req, res) => {
     try {
-        const { persona } = req.body;
+        const { persona } = req.params;
         const userId = req.user._id;
 
         if (!persona) {

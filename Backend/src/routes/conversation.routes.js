@@ -5,7 +5,7 @@ import { createConversation, deleteConversation, getAllConversations } from '../
 
 const router = Router();
 
-router.get("/", isLoggedIn , getAllConversations)
+router.get("/:persona", isLoggedIn , getAllConversations)
 router.post("/",isLoggedIn, createConversation )
 router.delete("/:id", isLoggedIn, deleteConversation)
 

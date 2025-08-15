@@ -18,24 +18,12 @@ const port= process.env.PORT || 8080;
 
 
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'https://persona-based-chat-app.vercel.app'
-  ],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+    origin: 'https://persona-based-chat-app.vercel.app' ,
+    credentials: true,               
+     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-app.options('*', cors({
-  origin: [
-    'http://localhost:5173',
-    'https://persona-based-chat-app.vercel.app'
-  ],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
 
 
 app.use(cookieParser())
@@ -44,6 +32,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/v1/auth",authRoutes );
 app.use("/api/v1/conversation",conversationRoutes);
 app.use("/api/v1/message/", messageRoutes);
+
+
 
 
 db();
